@@ -67,6 +67,6 @@ A systematic divergence is observed where the continuous Cox Hazard Ratios are h
 ## 🚀 How to Run the Environment
 Clone the repository and install the standard numerical computing requirements:
 ```bash
-git clone [https://github.com/YOUR_USERNAME/PancreaticCancer.git](https://github.com/YOUR_USERNAME/PancreaticCancer.git)
+git clone [https://github.com/DinkoTrendafilov/PancreaticCancer.git](https://github.com/DinkoTrendafilov/PancreaticCancer.git)
 cd PancreaticCancer
 pip install numpy pandas matplotlib scipy scikit-learn statsmodels lifelines
