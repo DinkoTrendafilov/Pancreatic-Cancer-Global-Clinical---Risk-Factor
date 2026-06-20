@@ -1,31 +1,31 @@
 # Pancreatic Cancer Prognostic Pipeline
 
 ## Overview
-This repository contains an end-to-end clinical analytics framework for **Pancreatic Ductal Adenocarcinoma (PDAC)** prognosis. The project bridges traditional biostatistical survival analysis with modern machine learning to provide high-recall risk stratification for clinical decision support.
+This repository provides an end-to-end clinical analytics framework designed for the prognosis of **Pancreatic Ductal Adenocarcinoma (PDAC)**. The project bridges traditional biostatistical survival analysis with modern machine learning, offering a robust solution for patient risk stratification. By integrating non-parametric survival estimators with high-recall predictive architectures, this pipeline serves as a scalable **Clinical Decision Support (CDS)** system.
 
-## Project Structure
-The analysis is modularized into distinct phases to ensure reproducibility and statistical rigor:
-1.  **Data Engineering:** Cleaning and stratification of global clinical datasets.
-2.  **Survival Analysis:** Non-parametric (Kaplan-Meier, Log-Rank) estimation of survival trajectories.
-3.  **Hazard Modeling:** Semi-parametric Cox Proportional Hazards for multivariate risk quantification.
-4.  **Predictive Modeling:** Machine Learning (XGBoost, Random Forest) pipeline optimized for high-recall clinical alerts.
+## Project Structure & Methodology
+The analysis is structured into a logical multi-phase pipeline to ensure statistical rigor and reproducibility:
+
+1.  **Data Engineering & Cleaning:** Comprehensive preprocessing, handling missing data, and feature engineering to ensure input quality.
+2.  **Non-Parametric Analysis:** Utilization of **Kaplan-Meier survival curves** and **Log-Rank tests** to visualize survival probabilities and compare clinical strata.
+3.  **Hazard Modeling:** Implementation of **Multivariate Cox Proportional Hazards** models to quantify hazard ratios and identify statistically significant prognostic drivers.
+4.  **Predictive Modeling (ML):** An advanced **XGBoost & Random Forest** pipeline designed to maximize clinical **Recall**, ensuring critical high-risk cases are identified with 100% sensitivity while maintaining an **F1-Score > 0.90**.
 
 ## Key Technical Features
-* **MLOps Integration:** Uses **MLflow** for programmatic experiment tracking, parameter logging, and artifact registry.
-* **Clinical Optimization:** Custom cost-sensitive weighting to prioritize **Recall** (ensuring no high-risk patients are missed) while maintaining an **F1-Score > 0.90**.
-* **Clinical Utility:** The pipeline includes a real-time simulation module for processing new patient data and generating automated risk alerts.
-
-## Methodology
-This pipeline follows a scientific approach, moving from univariate statistical screening to multivariate predictive modeling. It addresses common clinical data challenges such as censoring, multicollinearity, and class imbalance.
+* **MLOps Integration:** Centralized experiment tracking, parameter logging, and artifact registry via **MLflow**, enabling full auditability of every model iteration.
+* **Clinical Optimization:** Implementation of cost-sensitive learning to address class imbalance, prioritizing the detection of non-surviving patient cohorts (Class 1).
+* **Clinical Utility:** A built-in real-time simulation module that processes new, unseen patient intake data and outputs actionable clinical risk assessments.
+* **Reproducibility:** All stochastic processes, including data sampling and model initialization, are strictly locked to `random_state=29` to guarantee consistent and verifiable results across all environments.
 
 ## Tech Stack
-* **Languages:** Python
-* **ML/Stats:** `scikit-learn`, `xgboost`, `lifelines`, `pandas`, `numpy`
+* **Core:** Python
+* **Modeling:** `scikit-learn`, `xgboost`, `lifelines`
 * **MLOps:** `MLflow`
+* **Data Processing:** `pandas`, `numpy`
 * **Visualization:** `matplotlib`, `seaborn`
 
 ## Clinical Significance
-By identifying prognostic drivers earlier and with higher precision, this framework assists oncologists in tailoring therapeutic strategies, moving closer to data-driven, precision oncology.
+By identifying prognostic drivers earlier and with higher precision, this framework assists oncologists in tailoring therapeutic strategies. It moves beyond standard diagnostic tools, providing a data-driven approach to precision oncology that directly improves risk management in high-lethality scenarios.
 
 ---
-*Course Final Exam Project | June 2026*
+*Course Final Exam Project | Author: Dinko Trendafilov | June 2026*
