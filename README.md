@@ -99,7 +99,7 @@ risk = "HIGH RISK" if probability >= threshold else "LOW RISK"
 
 ## 👨‍⚕️ Author
 
-**Dinko Trendafilov** | [GitHub](https://github.com/dinko-trendafilov)
+**Dinko Trendafilov** | [GitHub](https://github.com/DinkoTrendafilov)
 
 ---
 
